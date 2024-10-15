@@ -48,6 +48,14 @@ function rolarArmadura() {
     mostrarResultado(resultadoBase, []);
 }
 
+//Função para trocar de background ao clicar
+document.querySelectorAll('.bg-option').forEach(option => {
+    option.addEventListener('click', () => {
+        document.body.style.backgroundImage = `url(${option.getAttribute('data-bg')})`;
+    });
+});
+
+
 // Função para exibir os resultados em um modal
 function mostrarResultado(resultadoBase, resultadoEstresse) {
     let baseContainer = document.getElementById('resultadoBase');

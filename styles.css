@@ -5,15 +5,21 @@
     src: local(OCRAStd), url(./assets/OCRAStd.otf);
 }
 
+html{
+    width: 100vw;
+    height: 100vh;
+}
+
 body {
     margin: 0px;
     box-sizing: border-box;
     background-color: #000;
-    color: #fff;
+    color: rgb(255, 255, 255);
     font-family: OCRAStd;
     background-image: url(./assets/alien-body.png);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
+    height: min-content;
 }
 
 main {
@@ -75,12 +81,44 @@ input[type="text"] {
     margin-left: 20%;
 }
 
+/*SWITCH DE IMAGENS*/
+.bg-switcher {
+    display: flex;
+    float: right;
+    gap: 5
+    px;
+    justify-content: right;
+    margin-top: 10px;
+}
+
+.bg-option {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    border: 1px solid #229b17;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.bg-option:nth-child(1) {
+    background-image: url('/assets/bg1.png');
+}
+
+.bg-option:nth-child(2) {
+    background-image: url('/assets/bg2.png');
+}
+
+.bg-option:nth-child(3) {
+    background-image: url('/assets/bg3.png');
+}
+
+
+
 /*FICHA*/
 .apresentacao {
     display: flex;
     flex-direction: column;
     text-align: left;
-    background-image: url(./assets/alien-background.svg);
     background-size: cover;
 }
 
@@ -113,7 +151,7 @@ label.personagem, input.personagem, label.vida {
 
 /*ATRIBUTOS E HABILIDADES*/
 .section {
-    margin-top: 15%;
+    margin-top: 12%;
     display: flex;
     align-items: center;
     place-content: center;
@@ -169,7 +207,7 @@ label.rolar {
 }
 
 .modal-content {
-    background-image: url(./assets/modart.jpg);
+    background-image: url(./assets/0922956e6ebd808003b9403bb915ba2d.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     margin: 5% auto;
@@ -201,7 +239,7 @@ label.rolar {
 
 .resultado-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .resultado-grid {
@@ -214,15 +252,16 @@ label.rolar {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     border: 1px solid #000;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
 }
 
 .resultado-base {
-    background-color: blue;
+    background-color: black;
+    outline: 1px solid white;
     color: white;
     border-radius: 15%;
 }
@@ -233,7 +272,8 @@ label.rolar {
 }
 
 .resultado-estresse {
-    background-color: blue;
+    background-color: black;
+    outline: 1px solid white;
     color: #fff;
     border-radius: 15%;
 }
@@ -254,7 +294,7 @@ label.rolar {
 }
 
 footer {
-    font-size: xx-small;
+    font-size: large;
     text-align: center;
     margin-top: 5%;
 }
@@ -300,11 +340,12 @@ footer {
     }
 
     .resultado-grid div {
-        width: 40px;
-        height: 40px;
-        font-size: 15px;
+        width: 60px;
+        height: 60px;
+        font-size: 25px;
     }
-        label.rolar, label.rolar.atributo, input[type="number"], input[type="text"] {
+    
+    label.rolar, label.rolar.atributo, input[type="number"], input[type="text"] {
         width: 100%;
         font-size: 15px;
         margin: 5px 10px;
@@ -330,6 +371,8 @@ footer {
         flex-flow: row;
         align-content: center;
         flex-wrap: wrap;
+        font-style: oblique;
+
     }
 
     input[type="number"] {
